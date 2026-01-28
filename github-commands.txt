@@ -1,0 +1,10 @@
+# GitHub Repository verbinden
+
+# Ersetze DEIN_USERNAME mit deinem GitHub Benutzernamen
+Start-Process -FilePath "C:\Program Files\Git\bin\git.exe" -ArgumentList "remote add origin https://github.com/DEIN_USERNAME/DarkEnde.git" -Wait -NoNewWindow
+
+# Branch zu main umbenennen
+Start-Process -FilePath "C:\Program Files\Git\bin\git.exe" -ArgumentList "branch -M main" -Wait -NoNewWindow
+
+# Zu GitHub pushen
+Start-Process -FilePath "C:\Program Files\Git\bin\git.exe" -ArgumentList "push -u origin main" -Wait -NoNewWindow
