@@ -1,0 +1,70 @@
+# Git Setup für DarkEnde Projekt
+
+## 1. Git initialisieren
+git init
+
+## 2. GitHub Repository hinzufügen (ersetze mit deinem Repository)
+git remote add origin https://github.com/DEIN_USERNAME/DEIN_REPO.git
+
+## 3. .gitignore erstellen (wichtig für Java Projekte)
+echo "# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+replay_pid*
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.project
+.classpath
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar" > .gitignore
+
+## 4. Dateien hinzufügen und committen
+git add .
+git commit -m "Initial commit: DarkEnde EnderChest Plugin"
+
+## 5. Zu GitHub pushen
+git branch -M main
+git push -u origin main
+
+## 6. GitHub Desktop Alternative
+Wenn du GitHub Desktop verwendest:
+1. GitHub Desktop öffnen
+2. "Add an Existing Repository from your hard drive"
+3. Ordner "C:\Users\MM\Desktop\Denny scribts\Dark ende" auswählen
+4. Repository auf GitHub veröffentlichen

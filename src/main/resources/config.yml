@@ -1,0 +1,20 @@
+# DarkEnde Configuration
+# Ränge und ihre EnderChest Stufen (1 = normal, 2 = 1.5x, 3 = 2x)
+ranks:
+  default: 1
+  vip: 2
+  premium: 3
+  admin: 3
+
+# Nachrichten (Deutsch)
+messages:
+  no_permission: "&cDu hast keine Berechtigung für diesen Befehl!"
+  player_not_found: "&cSpieler nicht gefunden!"
+  invalid_level: "&cUngültige Stufe! Verwende 1, 2 oder 3."
+  level_set: "&aDie EnderChest Stufe von %player% wurde auf %level% gesetzt!"
+  chest_opened: "&6EnderChest Stufe %level% geöffnet!"
+
+# Anti-Dupe Einstellungen
+anti_dupe:
+  enabled: true
+  check_interval: 5 # Sekunden zwischen Duplikationsprüfungen
