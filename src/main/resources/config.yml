@@ -8,13 +8,22 @@ ranks:
 
 # Nachrichten (Deutsch)
 messages:
-  no_permission: "&cDu hast keine Berechtigung für diesen Befehl!"
+  no_permission: "Denny sagrt NEIN"
   player_not_found: "&cSpieler nicht gefunden!"
   invalid_level: "&cUngültige Stufe! Verwende 1, 2 oder 3."
   level_set: "&aDie EnderChest Stufe von %player% wurde auf %level% gesetzt!"
   chest_opened: "&6EnderChest Stufe %level% geöffnet!"
+  sync_success: "&aEnderChest wurde synchronisiert!"
 
 # Anti-Dupe Einstellungen
 anti_dupe:
   enabled: true
   check_interval: 5 # Sekunden zwischen Duplikationsprüfungen
+
+# Cross-Over Sync (Multi-Server Synchronisation)
+crossover:
+  enabled: false # Setze auf true um Cross-Over Sync zu aktivieren
+  sync_interval: 30 # Sekunden zwischen Synchronisationen
+  sync_on_join: true # Synchronisiere wenn Spieler joint
+  sync_on_quit: true # Synchronisiere wenn Spieler verlässt
+  priority: "sync" # "sync" = Sync-Daten haben Priorität, "local" = lokale Daten haben Priorität

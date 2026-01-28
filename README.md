@@ -1,6 +1,6 @@
 # DarkEnde - EnderChest Plugin
 
-Ein einfaches Minecraft Plugin für erweiterte EnderChests mit 3 Stufen und Anti-Dupe Schutz.
+Ein einfaches Minecraft Plugin für erweiterte EnderChests mit 3 Stufen, Anti-Dupe Schutz und Cross-Over Synchronisation.
 
 ## Features
 
@@ -11,7 +11,31 @@ Ein einfaches Minecraft Plugin für erweiterte EnderChests mit 3 Stufen und Anti
 
 - **Rang-basierte Zuweisung:** Konfigurierbare Ränge in der config.yml
 - **Anti-Dupe Schutz:** Verhindert Item-Duplikation
-- **Einfache Verwaltung:** Mit `/endrang` Befehl
+- **Cross-Over Sync:** Synchronisiert EnderChests zwischen mehreren Servern
+- **Einfache Verwaltung:** Mit `/endrang` und `/endsync` Befehlen
+
+## Cross-Over Sync
+
+Die Cross-Over Synchronisation ermöglicht es, EnderChest Inhalte zwischen mehreren Servern zu synchronisieren:
+
+### Einrichtung:
+1. **Cross-Over Sync aktivieren:**
+   ```yaml
+   crossover:
+     enabled: true
+     sync_interval: 30 # Sekunden
+   ```
+
+2. **Gemeinsames Verzeichnis:** Alle Server müssen auf dasselbe `plugins/DarkEnde/crossover_sync.yml` Verzeichnis zugreifen können (z.B. via Netzwerkfreigabe)
+
+3. **Automatische Synchronisation:**
+   - Beim Spieler join/quit
+   - Alle 30 Sekunden (konfigurierbar)
+   - Manuell mit `/endsync`
+
+### Befehle:
+- `/endsync` - Synchronisiert dich selbst
+- `/endsync <spieler>` - Synchronisiert einen anderen Spieler
 
 ## Installation
 
@@ -24,6 +48,8 @@ Ein einfaches Minecraft Plugin für erweiterte EnderChests mit 3 Stufen und Anti
 
 3. Server neustarten
 
+4. Cross-Over Sync bei Bedarf in der `config.yml` aktivieren
+
 ## Konfiguration
 
 ### Ränge einstellen (config.yml):
@@ -35,14 +61,25 @@ ranks:
   admin: 3
 ```
 
-### Permissions:
-- `darkende.admin` - Kann EnderChest Stufen setzen
+### Cross-Over Sync (config.yml):
+```yaml
+crossover:
+  enabled: false
+  sync_interval: 30
+  sync_on_join: true
+  sync_on_quit: true
+  priority: "sync"
+```
+
+## Permissions:
+- `darkende.admin` - Kann EnderChest Stufen setzen und synchronisieren
 - `darkende.use` - Kann erweiterte EnderChests nutzen
 - `darkende.rank.<rangname>` - Weist Rang zu (z.B. `darkende.rank.vip`)
 
 ## Befehle
 
 - `/endrang <spieler> <stufe (1-3)>` - Setzt EnderChest Stufe für einen Spieler
+- `/endsync [spieler]` - Manuelle Synchronisation (nur mit Cross-Over Sync)
 
 ## Anti-Dupe Schutz
 
@@ -50,6 +87,15 @@ Das Plugin enthält einen grundlegenden Anti-Dupe Schutz, der:
 - Zeitabstände zwischen EnderChest-Öffnungen überwacht
 - Inventar-Snapshots erstellt
 - Verdächtige Aktivitäten protokolliert
+
+## Multi-Server Setup
+
+Für Cross-Over Sync zwischen mehreren Servern:
+
+1. **Alle Server installieren:** Dieselbe Plugin-Version auf allen Servern
+2. **Gemeinsamer Speicher:** Netzwerkfreigabe für `plugins/DarkEnde/` Ordner
+3. **Konfiguration:** Cross-Over Sync auf allen Servern aktivieren
+4. **Testen:** Mit `/endsync` die Synchronisation prüfen
 
 ## Entwickelt von
 

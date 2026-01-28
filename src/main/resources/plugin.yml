@@ -8,9 +8,13 @@ commands:
     description: Einstellen der EnderChest Stufe für einen Spieler
     usage: /endrang <spieler> <stufe (1-3)>
     permission: darkende.admin
+  endsync:
+    description: Manuelle Synchronisation der EnderChest
+    usage: /endsync [spieler]
+    permission: darkende.admin
 permissions:
   darkende.admin:
-    description: Erlaubt das Einstellen der EnderChest Stufen
+    description: Erlaubt das Einstellen der EnderChest Stufen und Synchronisation
     default: op
   darkende.use:
     description: Erlaubt die Nutzung der erweiterten EnderChest
